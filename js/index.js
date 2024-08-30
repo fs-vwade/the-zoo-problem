@@ -75,6 +75,10 @@ animals.forEach(animal => {
 	article_container.append(create_article(animal))
 })
 
+
+/** This is only for debugging purposes.
+ * Sorry about the mess!
+ */
 const default_ez_load = document.createElement('div')
 default_ez_load.innerHTML = `
 		<div class="animal-table">
@@ -116,5 +120,5 @@ default_ez_load.innerHTML = `
 		</div>
 `
 
-body.append(default_ez_load)
-//body.append(animal_table)
+//body.append(default_ez_load)
+body.append(animal_table)
