@@ -4,6 +4,13 @@
  */
 
 
+/** Moved function to its own file.
+ */
+const {
+	create_article
+} = require("./create_article")
+
+
 /** Animal as a class (OOP/DRY)
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
  */
@@ -63,32 +70,12 @@ article_container.className = 'article-container'
 animal_table.append(animal_table_header)
 animal_table.append(article_container)
 
-const create_article = (new_animal: Animal) => {
-	const article = document.createElement('article')
-	const article_header = document.createElement('h2')
-	article_header.textContent = new_animal.species_name
-
-	const article_img = document.createElement('img')
-	article_img.src = new_animal.img_url
-	article_img.alt = `${new_animal.species_name} Thumbnail`
-	article_img.className = 'article-thumbnail'
-
-	const article_name_list = document.createElement('ul')
-	new_animal.all_names
-		.forEach(name => {
-			list_item = document.createElement('li')
-			new_animal.textContent = name
-			article_name_list.append(list_item)
-		})
-
-	article.append(article_header)
-	article.append(article_img)
-	article.append(article_name_list)
-	return article
+for (let i = 0; i < animals.length; i++) {
+	article_container.append(create_article(animals[i]))
 }
 
-animals.forEach(animal => {
-	article_container.append(create_article(animal))
-})
+//animals.forEach(animal => {
+//	article_container.append(create_article(animal))
+//})
 
 document.body.append(animal_table)
