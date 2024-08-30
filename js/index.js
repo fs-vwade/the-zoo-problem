@@ -59,6 +59,7 @@ animals = [
 	new Animal("Alligators", "images/alligators.png", ["Wren", "Aspen", "Mika"], "")
 ]
 
+const body = document.createElement('body')
 const animal_table = document.createElement('div')
 const animal_table_header = document.createElement('h1')
 const article_container = document.createElement('div')
@@ -74,4 +75,5 @@ animals.forEach(animal => {
 	article_container.append(create_article(animal))
 })
 
-document.body.append(animal_table)
+body.append(animal_table)
+document.body = body
