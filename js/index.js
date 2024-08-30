@@ -16,7 +16,7 @@ const {
  */
 class Animal {
 	constructor(species, image, names, info) {
-		this.species = species
+		this.species = species.toUpperCase()
 		this.image = image
 		this.names = names /** An array of strings of animals' names */
 		this.info = info /* A link to the animal info page */
