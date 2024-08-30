@@ -70,12 +70,8 @@ article_container.className = 'article-container'
 animal_table.append(animal_table_header)
 animal_table.append(article_container)
 
-for (let i = 0; i < animals.length; i++) {
-	article_container.append(create_article(animals[i]))
-}
-
-//animals.forEach(animal => {
-//	article_container.append(create_article(animal))
-//})
+animals.forEach(animal => {
+	article_container.append(create_article(animal))
+})
 
 document.body.append(animal_table)
