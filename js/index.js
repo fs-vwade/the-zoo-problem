@@ -6,20 +6,19 @@
 
 /** Moved function to its own file.
  */
-const {
+import {
 	create_article
-} = require("./create_article")
-
+} from "./create_article.js" // Using import instead of require
 
 /** Animal as a class (OOP/DRY)
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
  */
 class Animal {
 	constructor(species, image, names, info) {
-		this.species = species.toUpperCase()
-		this.image = image
-		this.names = names /** An array of strings of animals' names */
-		this.info = info /* A link to the animal info page */
+		this.species = String(String(species).slice(0, 1) + String(species).toLowerCase().slice(1))
+		this.image = String(image)
+		this.names = Array(names) /** An array of strings of animals' names */
+		this.info = String(info) /* A link to the animal info page */
 	}
 
 	get species_name() {
@@ -51,12 +50,12 @@ class Animal {
 	}
 }
 
-animals = [
-	new Animal("Bears", "images/bears.png", ["Ollie", "Mona"], ""),
-	new Animal("Lions", "images/lions.png", ["Mella", "Karl"], ""),
-	new Animal("Monkeys", "images/monkeys.png", ["Cookie", "Earl", "Banana Pudding"], ""),
-	new Animal("Giraffes", "images/giraffes.png", ["Frankie", "Coconut"], ""),
-	new Animal("Alligators", "images/alligators.png", ["Wren", "Aspen", "Mika"], "")
+const animals = [
+	new Animal("Bears", "images/bears.png", ["Ollie", "Mona"], "pages/bear_facts.html"),
+	new Animal("Lions", "images/lions.png", ["Mella", "Karl"], "pages/lion_facts.html"),
+	new Animal("Monkeys", "images/monkeys.png", ["Cookie", "Earl", "Banana Pudding"], "pages/monkey_facts.html"),
+	new Animal("Giraffes", "images/giraffes.png", ["Frankie", "Coconut"], "pages/giraffe_facts.html"),
+	new Animal("Alligators", "images/alligators.png", ["Wren", "Aspen", "Mika"], "pages/alligator_facts.html")
 ]
 
 const body = document.body
@@ -75,50 +74,4 @@ animals.forEach(animal => {
 	article_container.append(create_article(animal))
 })
 
-
-/** This is only for debugging purposes.
- * Sorry about the mess!
- */
-const default_ez_load = document.createElement('div')
-default_ez_load.innerHTML = `
-		<div class="animal-table">
-			Zoo Animals
-			<div class="animal-types">
-				<article>
-					Lions
-					<br /><img src="images/lions.png" />
-					<div>Mella</div>
-					<div>Karl</div>
-				</article>
-				<article>
-					Bears
-					<br /><img src="images/bears.png" />
-					<bullet>Ollie</bullet>
-					<bullet>Mona</bullet>
-				</article>
-				<article>
-					Giraffes
-					<br /><img src="images/giraffes.png" />
-					<div>Frankie</div>
-					<div>Coconut</div>
-				</article>
-				<article>
-					Monkeys
-					<br /><img src="images/monkeys.png" />
-					<div>Cookie</div>
-					<div>Earl</div>
-					<div>Banana Pudding</div>
-				</article>
-				<article>
-					Alligators
-					<br /><img src="images/alligators.png" />
-					<div>Wren</div>
-					<div>Aspen</div>
-					<div>Mika</div>
-				</article>
-			</div>
-		</div>
-`
-
-//body.append(default_ez_load)
 body.append(animal_table)

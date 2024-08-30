@@ -9,16 +9,15 @@ export function create_article(new_animal) {
 	article_img.className = 'article-thumbnail';
 
 	const article_name_list = document.createElement('ul');
-	new_animal.all_names
-		.forEach(name => {
-			list_item = document.createElement('li');
-			list_item.innerHTML = name;
-			article_name_list.append(list_item);
-		});
+	new_animal.all_names.forEach(name => {
+		const list_item = document.createElement('li');
+		list_item.innerHTML = name;
+		article_name_list.append(list_item);
+	});
 
-	const article_info = document.createElement('a')
-	article_info.href = new_animal.info_link
-	article_info.innerText = `${new_animal.species_name} Facts (link)`
+	const article_info = document.createElement('a');
+	article_info.href = new_animal.info_link;
+	article_info.innerText = `${new_animal.species_name} Facts (link)`;
 
 	article.append(article_header);
 	article.append(article_img);
