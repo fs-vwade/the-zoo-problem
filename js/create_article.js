@@ -9,12 +9,11 @@ export function create_article(new_animal) {
 	article_img.className = "article-thumbnail";
 
 	const article_name_list = document.createElement("ul");
-	new_animal.all_names.forEach((name) => {
-		if (0 < String(name).length) {
-			const list_item = document.createElement("li");
-			list_item.innerText = String(name);
-			article_name_list.appendChild(list_item);
-		}
+	const list_items = [];
+	new_animal.all_names.forEach((name, i) => {
+		const list_item = document.createElement("li");
+		list_item.innerText = name;
+		article_name_list.appendChild(list_item);
 	});
 
 	const article_info = document.createElement("a");
