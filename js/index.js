@@ -75,4 +75,46 @@ animals.forEach(animal => {
 	article_container.append(create_article(animal))
 })
 
-body.append(animal_table)
+const default_ez_load = document.createElement('div')
+default_ez_load.innerHTML = `
+		<div class="animal-table">
+			Zoo Animals
+			<div class="animal-types">
+				<article>
+					Lions
+					<br /><img src="images/lions.png" />
+					<div>Mella</div>
+					<div>Karl</div>
+				</article>
+				<article>
+					Bears
+					<br /><img src="images/bears.png" />
+					<bullet>Ollie</bullet>
+					<bullet>Mona</bullet>
+				</article>
+				<article>
+					Giraffes
+					<br /><img src="images/giraffes.png" />
+					<div>Frankie</div>
+					<div>Coconut</div>
+				</article>
+				<article>
+					Monkeys
+					<br /><img src="images/monkeys.png" />
+					<div>Cookie</div>
+					<div>Earl</div>
+					<div>Banana Pudding</div>
+				</article>
+				<article>
+					Alligators
+					<br /><img src="images/alligators.png" />
+					<div>Wren</div>
+					<div>Aspen</div>
+					<div>Mika</div>
+				</article>
+			</div>
+		</div>
+`
+
+body.append(default_ez_load)
+//body.append(animal_table)
