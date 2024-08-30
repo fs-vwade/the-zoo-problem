@@ -59,12 +59,12 @@ animals = [
 	new Animal("Alligators", "images/alligators.png", ["Wren", "Aspen", "Mika"], "")
 ]
 
-const body = document.createElement('body')
+const body = document.body
 const animal_table = document.createElement('div')
 const animal_table_header = document.createElement('h1')
 const article_container = document.createElement('div')
 
-animal_table_header.innerHTML = "Zoo Animals"
+animal_table_header.innerText = "Zoo Animals"
 animal_table.className = 'animal-table'
 article_container.className = 'article-container'
 
@@ -76,4 +76,3 @@ animals.forEach(animal => {
 })
 
 body.append(animal_table)
-document.body = body
