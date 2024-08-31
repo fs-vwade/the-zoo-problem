@@ -12,6 +12,7 @@ export function create_article(new_animal) {
 	const list_items = [];
 	new_animal.all_names.forEach((name, i) => {
 		const list_item = document.createElement("li");
+		list_item.className = "bullet text";
 		list_item.innerText = name;
 		article_name_list.appendChild(list_item);
 	});
@@ -21,6 +22,7 @@ export function create_article(new_animal) {
 		new_animal.species_name
 	).toLowerCase()}_facts.html`;
 	article_info.innerText = `${new_animal.species_name} Facts (link)`;
+	article_info.className = "link text";
 
 	article.append(article_header);
 	article.append(article_img);
