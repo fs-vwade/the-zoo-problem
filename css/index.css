@@ -1,5 +1,20 @@
+:root {
+}
+
 body {
 	font-family: "Ubuntu", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.article-thumbnail {
+	--thumbnail-size: 200px;
+	--thumbnail-aspect: calc(sqrt(5 / 3));
+
+	display: inline-block;
+	font-size: 0;
+	border: 0.25px solid hsla(0, 0%, 25%, 50%);
+	width: calc(var(--thumbnail-size) * var(--thumbnail-aspect));
+	height: calc(var(--thumbnail-size) / var(--thumbnail-aspect));
+	object-fit: cover;
 }
 
 div.animal-table {

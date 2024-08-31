@@ -17,7 +17,9 @@ export function create_article(new_animal) {
 	});
 
 	const article_info = document.createElement("a");
-	article_info.href = new_animal.info_link;
+	article_info.href = `pages/${String(
+		new_animal.species_name
+	).toLowerCase()}_facts.html`;
 	article_info.innerText = `${new_animal.species_name} Facts (link)`;
 
 	article.append(article_header);

@@ -52,31 +52,31 @@ class Animal {
 const animals = [
 	new Animal(
 		"Bears",
-		"images/bears.png",
+		"images/bears.svg",
 		["Ollie", "Mona"],
 		"pages/bear_facts.html"
 	),
 	new Animal(
 		"Lions",
-		"images/lions.png",
+		"images/lions.svg",
 		["Mella", "Karl"],
 		"pages/lion_facts.html"
 	),
 	new Animal(
 		"Monkeys",
-		"images/monkeys.png",
+		"images/monkeys.svg",
 		["Cookie", "Earl", "Banana Pudding"],
 		"pages/monkey_facts.html"
 	),
 	new Animal(
 		"Giraffes",
-		"images/giraffes.png",
+		"images/giraffes.svg",
 		["Frankie", "Coconut"],
 		"pages/giraffe_facts.html"
 	),
 	new Animal(
 		"Alligators",
-		"images/alligators.png",
+		"images/alligators.svg",
 		["Wren", "Aspen", "Mika"],
 		"pages/alligator_facts.html"
 	),
