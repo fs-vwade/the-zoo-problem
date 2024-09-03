@@ -78,6 +78,9 @@ div.article-container article img {
 	display: block;
 	padding-inline-start: 2rem;
 }
+.summary {
+	margin-bottom: 1rem;
+}
 
 .link {
 	font-size: var(--link-text-size);

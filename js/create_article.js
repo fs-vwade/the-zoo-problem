@@ -1,6 +1,7 @@
 export function create_article(new_animal) {
 	const article = document.createElement("article");
 	const article_header = document.createElement("h2");
+	const article_summary = document.createElement("span");
 	article_header.innerText = new_animal.species_name;
 
 	const article_img = document.createElement("img");
@@ -28,9 +29,14 @@ export function create_article(new_animal) {
 	article_info.innerText = `${new_animal.species_name} Facts (link)`;
 	article_info.className = "link text";
 
+	// description requirement
+	article_summary.innerText = new_animal.summary;
+	article_summary.className = "summary text";
+
 	article.append(article_header);
 	article.append(article_img);
 	article.append(article_name_list);
+	article.append(article_summary);
 	article.append(article_info);
 
 	return article;
