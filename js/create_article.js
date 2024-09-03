@@ -20,7 +20,11 @@ export function create_article(new_animal) {
 	const article_info = document.createElement("a");
 	article_info.href = `pages/${String(
 		new_animal.species_name
-	).toLowerCase()}_facts.html`;
+	).toLowerCase()}_facts.html`; // internal link option
+	// external link requirement
+	article_info.href = `https://wikipedia.org/wiki/${String(
+		new_animal.species_name
+	).toLowerCase()}`;
 	article_info.innerText = `${new_animal.species_name} Facts (link)`;
 	article_info.className = "link text";
 
